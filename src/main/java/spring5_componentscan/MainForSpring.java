@@ -3,8 +3,6 @@ package spring5_componentscan;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,16 +10,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import spring5_componentscan.config.AppCtx;
 import spring5_componentscan.di.ChangePasswordService;
 import spring5_componentscan.di.DupulicateMemberException;
-import spring5_componentscan.di.Member;
 import spring5_componentscan.di.MemberInfoPrinter;
 import spring5_componentscan.di.MemberListPrinter;
 import spring5_componentscan.di.MemberNotFoundException;
-import spring5_componentscan.di.MemberPrinter;
 import spring5_componentscan.di.MemberRegisterService;
 import spring5_componentscan.di.RegisterRequest;
 import spring5_componentscan.di.VersionPrinter;
 import spring5_componentscan.di.WrongIdPasswordException;
-import spring5_componentscan.di.selectService;
 
 public class MainForSpring {
 	
