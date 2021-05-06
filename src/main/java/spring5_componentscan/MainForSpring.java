@@ -8,15 +8,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import spring5_componentscan.config.AppCtx;
-import spring5_componentscan.di.ChangePasswordService;
-import spring5_componentscan.di.DupulicateMemberException;
-import spring5_componentscan.di.MemberInfoPrinter;
-import spring5_componentscan.di.MemberListPrinter;
-import spring5_componentscan.di.MemberNotFoundException;
-import spring5_componentscan.di.MemberRegisterService;
-import spring5_componentscan.di.RegisterRequest;
-import spring5_componentscan.di.VersionPrinter;
-import spring5_componentscan.di.WrongIdPasswordException;
+import spring5_componentscan.spring.ChangePasswordService;
+import spring5_componentscan.spring.DupulicateMemberException;
+import spring5_componentscan.spring.MemberInfoPrinter;
+import spring5_componentscan.spring.MemberListPrinter;
+import spring5_componentscan.spring.MemberNotFoundException;
+import spring5_componentscan.spring.MemberRegisterService;
+import spring5_componentscan.spring.RegisterRequest;
+import spring5_componentscan.spring.VersionPrinter;
+import spring5_componentscan.spring.WrongIdPasswordException;
 
 public class MainForSpring {
 	
@@ -54,25 +54,19 @@ public class MainForSpring {
 		}
 	}
 
-	
-
 	private static void processVersionCommand() {
 		VersionPrinter versionPrinter = ctx.getBean("versionPrinter", VersionPrinter.class);
 		versionPrinter.print();
 	}
-
-
 
 	private static void processInfoCommand(String[] arg) {
 		if(arg.length != 2) {
 			printHelp();
 			return;
 		}
-		MemberInfoPrinter infoPrinter = ctx.getBean("memberInfoPrinter", MemberInfoPrinter.class);
+		MemberInfoPrinter infoPrinter = ctx.getBean(MemberInfoPrinter.class);
 		infoPrinter.printMemberInfo(arg[1]);
 	}
-
-
 
 	private static void processNewCommand(String[] arg) {
 		if (arg.length != 5) {
@@ -80,8 +74,7 @@ public class MainForSpring {
 			return;
 		}
 		
-		MemberRegisterService regSvc = ctx.getBean("memberRegSvc",
-																				MemberRegisterService.class);
+		MemberRegisterService regSvc = ctx.getBean(MemberRegisterService.class);
 		RegisterRequest req = new RegisterRequest();
 		req.setEmail(arg[1]);
 		req.setName(arg[2]);
@@ -106,8 +99,7 @@ public class MainForSpring {
 			return;
 		}
 		
-		ChangePasswordService changePwdSvc = ctx.getBean("changePwdSvc",
-																								ChangePasswordService.class);
+		ChangePasswordService changePwdSvc = ctx.getBean(ChangePasswordService.class);
 		
 		try {
 			changePwdSvc.changePassword(arg[1], arg[2], arg[3]);
@@ -120,7 +112,7 @@ public class MainForSpring {
 	}
 
 	private static void processListCommand() {
-		MemberListPrinter service  = ctx.getBean("memberListPrinter",MemberListPrinter.class);
+		MemberListPrinter service  = ctx.getBean(MemberListPrinter.class);
 		service.printAll();
 	}
 	

@@ -1,4 +1,4 @@
-package spring5_componentscan.di;
+package spring5_componentscan.spring;
 
 import java.time.LocalDateTime;
 

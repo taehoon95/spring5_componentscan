@@ -1,9 +1,11 @@
-package spring5_componentscan.di;
+package spring5_componentscan.spring;
 
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemberRegisterService {
 
 	@Autowired

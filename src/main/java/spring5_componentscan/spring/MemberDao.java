@@ -1,9 +1,12 @@
-package spring5_componentscan.di;
+package spring5_componentscan.spring;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberDao {
 
 	private static long nextId = 0;

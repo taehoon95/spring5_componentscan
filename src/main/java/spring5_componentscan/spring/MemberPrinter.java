@@ -1,5 +1,8 @@
-package spring5_componentscan.di;
+package spring5_componentscan.spring;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberPrinter {
 	
 	public void print(Member member) {
