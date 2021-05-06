@@ -1,4 +1,4 @@
-package spring5_componentscan.config;
+package spring5_componentscan;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,6 +9,7 @@ import java.util.Map.Entry;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import spring5_componentscan.config.AppCtx;
 import spring5_componentscan.di.ChangePasswordService;
 import spring5_componentscan.di.DupulicateMemberException;
 import spring5_componentscan.di.Member;
