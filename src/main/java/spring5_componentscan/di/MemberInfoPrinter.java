@@ -17,13 +17,5 @@ public class MemberInfoPrinter {
 		printer.print(member);
 		System.out.println();
 	}
-
-//	public void setMemDao(MemberDao memDao) {
-//		this.memDao = memDao;
-//	}
-//
-//	public void setPrinter(MemberPrinter printer) {
-//		this.printer = printer;
-//	}
 	
 }
